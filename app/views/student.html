@@ -15,27 +15,46 @@
                 <h4>Habilidades</h4>
 
                 {% for skill in student.skills %}
-                    <div class="small-6 medium-3 columns">
+                    <div class="small-6 medium-3 columns left">
                         {{skill.name}}
                     </div>
                 {% endfor %}
             </div>	
     	</section>
-    	<!-- Cambiar este iframe por un google map -->
+
 
     	<section class="small-12 medium-6 columns">
             <h3>Compañias adecuadas</h3>
             <div class="row collapse">
-            {% if companies %}
-                <ul>
-                    {% for company in companies %}
-                        <li>
-                            <a href="{{url_for("companies", company_id=company.id)}}">{{company.name}}</a>
-                        </li>
-                    {% endfor %}
-                </ul>
+            {% if matching_companies %}
+                
+                {% for company in matching_companies %}
+                    <div class="small-12 columns company">
+                        <h4>{{company["model"].name}}</h4>
+                        <p>{{company["model"].address}}</p>
+                        <div>teléfono:
+                            <a href="tel:{{company["model"].phone}}"> {{company["model"].phone}}</a> | 
+                            <a href="{{company["model"].website}}" target="_blank">website</a>
+                        </div>
+                        <h5><strong>Habilidades que coinciden</strong></h5>
+                        {% for skill in company["skills"] %}
+                            <span>{{skill.name}}</span>
+                        {% endfor %}
+                        <h5><strong>Otras habilidades requeridas</strong></h5>
+                        {% if company["other_skills"] %}
+                            {% for skill in company["other_skills"] %}
+                                <span>{{skill.name}}</span>
+                            {% endfor %}
+                        {% else %}
+                            <p>No requieren nada más! Esta alumna cumple todos los requicitos.</p>
+                        {% endif %}
+                        <hr>
+                    </div>        
+                        
+                {% endfor %}
+                
             {% else %}
-                <div>Lo sentimos, en este momento no hay ninguna compañia que concuerde con tu aplicación</div>
+                <p>Lo sentimos, en este momento no hay ninguna compañia que concuerde con tu aplicación</p>
             {% endif %}
             
                 
