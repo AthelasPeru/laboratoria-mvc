@@ -1,0 +1,45 @@
+{% extends "foundation/base.html" %}
+{% import "foundation/components.html" as components%}
+
+{% block navbar %}
+	{% call components.topbar(class="fixed") %}
+		<ul class="title-area">
+		    <li class="name">
+		      <h1><a href="{{url_for("front.index")}}">Bolsa de trabajo</a></h1>
+		    </li>
+		     <!-- Remove the class "menu-icon" to get rid of menu icon. Take out "Menu" to just have icon alone -->
+		    <li class="toggle-topbar menu-icon"><a href="#"><span>Menu</span></a></li>
+	  	</ul>
+	  	 <section class="top-bar-section">
+			<ul class="right">
+				<li>
+					<a href="{{url_for("admin.admin_main")}}">administrador</a>
+				</li>
+			</ul>
+
+	  	 </section>
+
+	{% endcall %}    
+{% endblock navbar %}
+
+
+{% block content %}
+<div class="row">
+  
+      {% with messages = get_flashed_messages(with_categories=true) %}
+        {% if messages %}
+          <h5>Mensajes</h5>
+          <ul class="flashes">
+          {% for category, message in messages %}
+            <li class="alert-box {{ category }}">{{ message }}</li>
+          {% endfor %}
+          </ul>
+          <hr>
+        {% endif %}
+      {% endwith %}
+      
+
+</div>
+	
+    
+{% endblock content %}

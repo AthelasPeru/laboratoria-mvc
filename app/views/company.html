@@ -1,0 +1,18 @@
+{% extends "base.html" %}
+
+
+{% block content %}
+    <div class="row">
+    	<section class="data small-12 medium-6 columns">
+    		<h2>{{company.name}}</h2>
+    		<hr>
+    		<div>{{company.address}}</div>
+    		<div>teléfono: <a href="tel:{{company.phone}}">{{company.phone}}</a></div>	
+    		<h5><a href="{{company.website}}" target="_blank">Aplica a un trabajo aquí</a></h5>
+    	</section>
+    	<!-- Cambiar este iframe por un google map -->
+    	<iframe src="{{company.website}}" class="website small-12 medium-6 columns" height="450"></iframe>
+    	
+    	
+    </div>
+{% endblock content %}

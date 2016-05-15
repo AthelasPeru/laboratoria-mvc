@@ -1,0 +1,51 @@
+{% extends "base.html" %}
+
+{% block content %}
+	{{super()}}
+    <div class="row">
+    	{% if student_id %}
+		<form action="{{url_for("admin.crud_student", student_id=student_id)}}" method="POST">
+    	{% else %}
+    	<form action="{{url_for("admin.crud_student")}}" method="POST">
+    	{% endif %}
+
+    	{{form.hidden_tag()}}
+    	<div class="small-12 medium-6 columns left-side">
+    		<div class="row collapsed">
+    			<div class="small-12 medium-6 columns">
+    				{{form.name.label}}
+    				{{form.name}}
+    			</div>
+    			<div class="small-12 medium-6 columns">
+    				{{form.last_name.label}}
+    				{{form.last_name}}
+    			</div>
+    		</div>
+    		<div class="row collapsed">
+    			<div class="small-4 medium-3 columns">
+    				{{form.age.label}}
+    				{{form.age}}
+    			</div>
+    			<div class="small-8 medium-9 columns">
+    				{{form.email.label}}
+    				{{form.email}}
+    			</div>
+    		</div>
+    		<input type="submit" value="agregar" class="button success">
+    	</div>
+    	<div class="small-12 medium-6 columns right-side">
+    		<div class="row collapsed">
+    			{% for skill in form.skills %}
+    				<div class="small-6 columns">{{skill}}{{skill.label}}</div>
+    			{% endfor %}
+    				
+    		</div>
+			
+    	</div>
+
+    	
+    	
+    		
+    	</form>
+    </div>
+{% endblock content %}

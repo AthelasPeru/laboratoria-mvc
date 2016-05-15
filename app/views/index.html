@@ -1,0 +1,27 @@
+{% extends "base.html" %}
+
+{% block content %}
+
+<div class="row">
+	<section class="small-12 medium-6 columns">
+		<h3>Alumnas</h3>
+		<ul class="row">
+			{% for student in students %}
+			<li class="small-12 columns">
+				<a href="{{url_for("front.students", student_id=student.id)}}">{{student.name}}</a>
+			</li>
+			{% endfor %}
+		</ul>
+	</section>
+	<section class="small-12 medium-6 columns">
+		<h3>Compañias</h3>
+		<ul class="row">
+			{% for company in companies %}
+			<li class="small-12 columns">
+				<a href="{{url_for("front.companies", company_id=company.id)}}">{{company.name}}</a>
+			</li>
+			{% endfor %}
+		</ul>
+	</section>
+</div>
+{% endblock content %}

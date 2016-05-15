@@ -1,0 +1,47 @@
+{% extends "base.html" %}
+
+
+{% block content %}
+
+{{super()}}
+    <div class="row">
+    	<section class="data small-12 medium-6 columns">
+    		<h2>{{student.name}} {{student.last_name}}</h2>
+    		<hr>
+    		<div>edad: {{student.age}} años</div>
+    		<div>email: <a href="mailto:{{student.email}}">{{student.email}}</a></div>
+            <hr>
+            <div class="row collapse">
+                <h4>Habilidades</h4>
+
+                {% for skill in student.skills %}
+                    <div class="small-6 medium-3 columns">
+                        {{skill.name}}
+                    </div>
+                {% endfor %}
+            </div>	
+    	</section>
+    	<!-- Cambiar este iframe por un google map -->
+
+    	<section class="small-12 medium-6 columns">
+            <h3>Compañias adecuadas</h3>
+            <div class="row collapse">
+            {% if companies %}
+                <ul>
+                    {% for company in companies %}
+                        <li>
+                            <a href="{{url_for("companies", company_id=company.id)}}">{{company.name}}</a>
+                        </li>
+                    {% endfor %}
+                </ul>
+            {% else %}
+                <div>Lo sentimos, en este momento no hay ninguna compañia que concuerde con tu aplicación</div>
+            {% endif %}
+            
+                
+            </div>   
+        </section>
+    	
+    	
+    </div>
+{% endblock content %}
