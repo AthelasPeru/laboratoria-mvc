@@ -15,10 +15,10 @@
 	</section>
 	<section class="small-12 medium-6 columns">
 		<h3 class="title--alpha">Compañias</h3>
-		<ul class="row">
+		<ul class="row zebralist">
 			{% for company in companies %}
 			<li class="small-12 columns">
-				<a href="{{url_for("front.companies", company_id=company.id)}}">{{company.name}}</a>
+				<a href="{{url_for("front.companies", company_id=company.id)}}" class="zebralist__link">{{company.name}}</a>
 			</li>
 			{% endfor %}
 		</ul>
