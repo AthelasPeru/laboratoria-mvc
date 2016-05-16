@@ -2,19 +2,19 @@
 
 {% block content %}
 
-<div class="row">
+<div class="row spacer-lg">
 	<section class="small-12 medium-6 columns">
-		<h3>Alumnas</h3>
-		<ul class="row">
+		<h3 class="title--alpha">Alumnas</h3>
+		<ul class="row zebralist">
 			{% for student in students %}
 			<li class="small-12 columns">
-				<a href="{{url_for("front.students", student_id=student.id)}}">{{student.name}}</a>
+				<a href="{{url_for("front.students", student_id=student.id)}}" class="zebralist__link">{{student.name}}</a>
 			</li>
 			{% endfor %}
 		</ul>
 	</section>
 	<section class="small-12 medium-6 columns">
-		<h3>Compañias</h3>
+		<h3 class="title--alpha">Compañias</h3>
 		<ul class="row">
 			{% for company in companies %}
 			<li class="small-12 columns">

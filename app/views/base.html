@@ -1,11 +1,16 @@
 {% extends "foundation/base.html" %}
 {% import "foundation/components.html" as components%}
+{% block styles %}
+	{{super()}}
+
+	<link rel="stylesheet" href="{{url_for("static",filename="css/style.css")}}">
+{% endblock styles %}
 
 {% block navbar %}
 	{% call components.topbar(class="fixed") %}
 		<ul class="title-area">
 		    <li class="name">
-		      <h1><a href="{{url_for("front.index")}}">Bolsa de trabajo</a></h1>
+		      <h1><a href="{{url_for("front.index")}}"><span>&lt;</span>laborapp<span>&gt;</span></a></h1>
 		    </li>
 		     <!-- Remove the class "menu-icon" to get rid of menu icon. Take out "Menu" to just have icon alone -->
 		    <li class="toggle-topbar menu-icon"><a href="#"><span>Menu</span></a></li>
@@ -13,7 +18,7 @@
 	  	 <section class="top-bar-section">
 			<ul class="right">
 				<li>
-					<a href="{{url_for("admin.index")}}">administrador</a>
+					<a href="{{url_for("admin.index")}}">Administrador</a>
 				</li>
 			</ul>
 
