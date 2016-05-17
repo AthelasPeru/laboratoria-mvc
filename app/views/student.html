@@ -6,45 +6,53 @@
 {{super()}}
     <div class="row spacer-lg">
     	<section class="data small-12 medium-6 columns">
-    		<h2>{{student.name}} {{student.last_name}}</h2>
-    		<hr>
-    		<div>edad: {{student.age}} años</div>
-    		<div>email: <a href="mailto:{{student.email}}">{{student.email}}</a></div>
-            <hr>
-            <div class="row collapse">
-                <h4>Habilidades</h4>
+    		<h2 class="title--alpha">{{student.name}} {{student.last_name}}</h2>
+    		<dl>
+                <dt>Edad:</dt>
+                <dd>{{student.age}} años</dd>
 
+    		    <dt>Email:</dt>
+                <dd><a href="mailto:{{student.email}}">{{student.email}}</a></dd>
+            
+                <dt>Habilidades:</dt>
+                <dd class="csv">
                 {% for skill in student.skills %}
-                    <div class="small-6 medium-3 columns left">
-                        {{skill.name}}
-                    </div>
+                    <span>{{skill.name}}</span>
                 {% endfor %}
-            </div>	
+                </dd>
+            </dl>	
     	</section>
 
 
     	<section class="small-12 medium-6 columns">
-            <h3>Compañias adecuadas</h3>
+            <h3 class="title--alpha">Compañias adecuadas</h3>
             <div class="row collapse">
             {% if matching_companies %}
                 
                 {% for company in matching_companies %}
                     <div class="small-12 columns company">
                         <h4>{{company["model"].name}}</h4>
-                        <p>{{company["model"].address}}</p>
-                        <div>teléfono:
-                            <a href="tel:{{company["model"].phone}}"> {{company["model"].phone}}</a> | 
-                            <a href="{{company["model"].website}}" target="_blank">website</a>
-                        </div>
-                        <h5><strong>Habilidades que coinciden</strong></h5>
+                        <dl>
+                            <dt>Dirección:</dt>
+                            <dd>{{company["model"].address}}</dd>
+                            <dt>Teléfono:</dt>
+                            <dd><a href="tel:{{company["model"].phone}}"> {{company["model"].phone}}</a></dd> 
+                            <dt>Visítalos en:</dt>
+                            <dd><a href="{{company["model"].website}}" target="_blank">website</a></dd>
+                        </dl>
+                        <h5>Habilidades que coinciden</h5>
+                        <p class="csv">
                         {% for skill in company["skills"] %}
                             <span>{{skill.name}}</span>
                         {% endfor %}
-                        <h5><strong>Otras habilidades requeridas</strong></h5>
+                        </p>
+                        <h5>Otras habilidades requeridas</h5>
                         {% if company["other_skills"] %}
+                            <p class="csv">
                             {% for skill in company["other_skills"] %}
                                 <span>{{skill.name}}</span>
                             {% endfor %}
+                            </p>
                         {% else %}
                             <p>No requieren nada más! Esta alumna cumple todos los requicitos.</p>
                         {% endif %}
