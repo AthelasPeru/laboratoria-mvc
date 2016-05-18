@@ -9,13 +9,20 @@
     		<dl>
                 <dt>Dirección:</dt>
                 <dd>{{company.address}}</dd>
-                <dt>Teléfono:</dt><dd><a href="tel:{{company.phone}}">{{company.phone}}</a></dd>
+                <dt>Teléfono:</dt>
+                <dd><a href="tel:{{company.phone}}">{{company.phone}}</a></dd>
             </dl>    	
-    		<h5><a href="{{company.website}}" target="_blank">Aplica a un trabajo aquí</a></h5>
+    		<a href="{{company.website}}" target="_blank" class="cta">Aplica a un trabajo aquí</a>
     	</section>
     	<!-- Cambiar este iframe por un google map -->
-    	<iframe src="{{company.website}}" class="website small-12 medium-6 columns" height="450"></iframe>
-    	
+        <div class="website small-12 medium-6 columns">
+           <div class="perspective-1">
+               <div class="iphone">  
+        	       <iframe src="{{company.website}}"  height="450"></iframe>
+                   <a href="{{company.website}}" target="_blank" class="iphone__button"></a>
+        	   </div>
+           </div>
+        </div>
     	
     </div>
 {% endblock content %}
