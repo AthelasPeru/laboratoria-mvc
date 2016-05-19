@@ -1,13 +1,13 @@
 """modelos actualizado
 
-Revision ID: 43eae590bc4a
+Revision ID: acf284a52e5f
 Revises: None
-Create Date: 2016-05-19 09:24:58.830615
+Create Date: 2016-05-19 09:32:02.603013
 
 """
 
 # revision identifiers, used by Alembic.
-revision = '43eae590bc4a'
+revision = 'acf284a52e5f'
 down_revision = None
 
 from alembic import op

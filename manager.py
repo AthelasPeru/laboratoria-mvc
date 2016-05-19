@@ -74,6 +74,13 @@ def populate(populate):
 		website="http://lucumalabs.com/"
 	)
 	db.session.add(company2)
+	company3 = Company(
+		name=u"Codepicnic",
+		address="Por todo el mundo",
+		phone="+48652689522",
+		website="https://codepicnic.com/"
+	)
+	db.session.add(company3)
 
 	db.session.commit()
 
@@ -86,6 +93,10 @@ def populate(populate):
 	company2.skills.append(skills[4])
 	company2.skills.append(skills[5])
 	company2.skills.append(skills[1])
+
+	company3.skills.append(skills[3])
+	company3.skills.append(skills[5])
+	company3.skills.append(skills[1])
 
 	student_1.skills.append(skills[0])
 	student_1.skills.append(skills[1])
