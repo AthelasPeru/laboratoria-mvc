@@ -11,8 +11,11 @@ Comandos:
 	# iniciar la aplicación
 	$ python run.py
 
-	# Actualizar modelos 
+	# modificar los modelos
 	$ sh update_models.sh
+	
+	# Resetear modelos 
+	$ sh create_models.sh
 
 
 Ejercicios:
