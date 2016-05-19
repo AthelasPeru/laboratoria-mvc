@@ -32,8 +32,8 @@ Agregar “logo” al modelo Skill
 2. Luego ve al administrador y agrega logo a los skills existentes. 
 3. Muestra los logos en alguna vista relevante
 
-Cambiar el <iframe> de web en las vistas Company
+Agregar mapa de google a la vista Company
 --------------------------------------------------
 
-Reemplazarlo por un google map de la dirección de la compañia. Puedes hacerlo de cualquier manera, cualquiera estará bien.  
+Puedes hacerlo de cualquier manera, cualquiera estará bien.  
 

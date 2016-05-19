@@ -17,4 +17,4 @@ class Company(db.Model):
 
 
 	def __repr__(self):
-		return "{} - {}".format(self.name, self.address) 
+		return u"{} - {}".format(self.name, self.address)

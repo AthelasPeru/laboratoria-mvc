@@ -1,3 +1,5 @@
+# coding: utf-8
+
 from flask_script import Manager
 from flask_migrate import Migrate, MigrateCommand
 
@@ -65,6 +67,13 @@ def populate(populate):
 		website="https://www.athelas.pe"
 	)
 	db.session.add(company)
+	company2 = Company(
+		name=u"Lucuma Labs",
+		address="Cerca al faro de miraflores",
+		phone="+5199999999",
+		website="http://lucumalabs.com/"
+	)
+	db.session.add(company2)
 
 	db.session.commit()
 
@@ -73,6 +82,23 @@ def populate(populate):
 	company.skills.append(skills[1])
 	company.skills.append(skills[2])
 	company.skills.append(skills[3])
+
+	company2.skills.append(skills[4])
+	company2.skills.append(skills[5])
+	company2.skills.append(skills[1])
+
+	student_1.skills.append(skills[0])
+	student_1.skills.append(skills[1])
+	student_1.skills.append(skills[2])
+
+	student_2.skills.append(skills[0])
+	student_2.skills.append(skills[1])
+	student_2.skills.append(skills[2])
+	student_2.skills.append(skills[3])
+
+
+	
+
 
 	db.session.commit()
 

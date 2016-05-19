@@ -238,3 +238,24 @@ dd:after{
 	}
 
 	
+.company h4 a{
+	text-decoration: none;
+}
+
+.footer{
+	position: fixed;
+    bottom: 0;
+    background: #000;
+    width: 100%;
+}
+
+@media screen and (max-width: 640px){
+	.footer{
+		padding: 0px;
+	}
+
+}
+
+.footer span, .footer a{
+	color: #fff;
+}

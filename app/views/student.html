@@ -31,7 +31,7 @@
                 
                 {% for company in matching_companies %}
                     <div class="small-12 columns company">
-                        <h4>{{company["model"].name}}</h4>
+                        <h4><a href="{{url_for("front.companies", company_id=company["model"].id)}}">{{company["model"].name}}</a></h4>
                         <dl>
                             <dt>Dirección:</dt>
                             <dd>{{company["model"].address}}</dd>
