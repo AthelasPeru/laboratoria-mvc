@@ -3,14 +3,37 @@ laboratoria-mvc
 
 MVC talk for Laboratoria
 
+Comandos:
+*************
+
+.. code-block::
+
+	# iniciar la aplicación
+	$ python run.py
+
+	# Actualizar modelos 
+	$ sh update_models.sh
+
+
 Ejercicios:
 *************
 
-- Agregar logo a los Skills
-- Reemplazar Iframe web por gmap
+Mostrar en las vistas algún elemento que este en el modelo y no se esté mostrando
+------------------------------------------------------------------------------------
+
+Debes revisar los modelos y ver si alguna de sus propiedades no se está mostrando en las vistas. De ser así, encuentra el template que las 
+está mostrando y edítalo para que muestre ese contenido.
 
 
-TODO
-******
+Agregar “logo” al modelo Skill
+----------------------------------
 
-Hacer los Skills no many to many como están, sino que ambos Modelos tienenacceso a todos.
+1. Ve al modelo Skill y agrega una propiedad **logo**, este deber´a ser de tipo Unicode para rellenar con un link a la imágen. Luego de hacerlo deberás correr el script que resetea la base de datos. 
+2. Luego ve al administrador y agrega logo a los skills existentes. 
+3. Muestra los logos en alguna vista relevante
+
+Cambiar el <iframe> de web en las vistas Company
+--------------------------------------------------
+
+Reemplazarlo por un google map de la dirección de la compañia. Puedes hacerlo de cualquier manera, cualquiera estará bien.  
+

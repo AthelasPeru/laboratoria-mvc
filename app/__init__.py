@@ -12,7 +12,7 @@ from app.models.skill import Skill
 from app.models.company import Company
 
 from blueprints.frontend import frontend
-from blueprints.admin import AdminStudentView, AdminCompanyView
+from blueprints.admin import AdminStudentView, AdminCompanyView, AdminSkillView
 
 
 
@@ -26,16 +26,18 @@ def create_app(app=None, config_file=None):
     if config_file:
     	app.config.from_pyfile("config/{}.py".format(config_file))
 
-    # Blueprints
-    app.register_blueprint(frontend)
-    
-
     # Extensions
     Foundation(app)
     admin = Admin(app, name='Bolsa de Trabajo', template_mode='bootstrap3')
 
+    """
+    CONTROLADORES 
+    """
+    # Blueprints
+    app.register_blueprint(frontend)    
+
     # Admin Views
-    admin.add_view(ModelView(Skill, db.session))
+    admin.add_view(AdminSkillView(Skill, db.session))
     admin.add_view(AdminStudentView(Student, db.session))
     admin.add_view(AdminCompanyView(Company, db.session))
 
