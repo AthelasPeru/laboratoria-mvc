@@ -71,7 +71,7 @@ def populate(populate):
 		name=u"Lucuma Labs",
 		address="Cerca al faro de miraflores",
 		phone="+511 681 0041",
-		website="http://lucumalabs.com/"
+		website="https://lucumalabs.com/"
 	)
 	db.session.add(company2)
 	company3 = Company(
