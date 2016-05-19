@@ -70,7 +70,7 @@ def populate(populate):
 	company2 = Company(
 		name=u"Lucuma Labs",
 		address="Cerca al faro de miraflores",
-		phone="+5199999999",
+		phone="+511 681 0041",
 		website="http://lucumalabs.com/"
 	)
 	db.session.add(company2)

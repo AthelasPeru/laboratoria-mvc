@@ -1,13 +1,13 @@
 """modelos actualizado
 
-Revision ID: d0edad98beb0
+Revision ID: 43eae590bc4a
 Revises: None
-Create Date: 2016-05-19 08:47:19.606652
+Create Date: 2016-05-19 09:24:58.830615
 
 """
 
 # revision identifiers, used by Alembic.
-revision = 'd0edad98beb0'
+revision = '43eae590bc4a'
 down_revision = None
 
 from alembic import op
