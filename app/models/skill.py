@@ -9,7 +9,7 @@ class Skill(db.Model):
 	name = db.Column(db.Unicode(50), unique=True)
 	description = db.Column(db.UnicodeText)
 	# agregar un logo para cada item
-	logo = db.Column(db.Unicode(255))
+	
 	
 
 
