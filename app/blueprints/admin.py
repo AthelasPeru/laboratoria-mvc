@@ -16,4 +16,4 @@ class AdminCompanyView(ModelView):
 class AdminSkillView(ModelView):
     """Vista que permite realizar operaciones CRUD sobre el modelo Skill"""
 
-    column_list = ("name", "description")
+    column_list = ("name", "description", "logo")

@@ -17,8 +17,20 @@
                 <dt>Habilidades:</dt>
                 <dd class="csv">
                 {% for skill in student.skills %}
+                    <div>
                     <span>{{skill.name}}</span>
+                    </div>
+                    {% if skill.description%}
+                    <div>
+                    
+                    <span>{{skill.description}}</span>
+                    {% endif %}
+                    {% if skill.logo %}
+                    <img src="{{skill.logo}}" alt="logo-{{skill.name}}">
+                    {% endif %}
+                    
                 {% endfor %}
+                </div>
                 </dd>
             </dl>	
     	</section>

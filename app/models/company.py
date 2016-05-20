@@ -11,10 +11,11 @@ class Company(db.Model):
 	address = db.Column(db.Unicode(255))
 	phone = db.Column(db.Unicode(50))
 	website = db.Column(db.Unicode(255), unique=True)
-
+	site = db.Column(db.Unicode(255))
 	skills = db.relationship("Skill", secondary=company_skills,
 									backref=db.backref("companies", lazy="dynamic"))
 
 
 	def __repr__(self):
 		return u"{} - {}".format(self.name, self.address)
+
